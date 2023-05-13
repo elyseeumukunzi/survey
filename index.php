@@ -235,19 +235,32 @@ foreach ($results as $userinfo) {
               $options = $question->frm_option;
               $questionid=$question->id;
             }
-
-
-
+            
             ?>
             <div class="detail-box">
               <div class="heading_container">
-                <h1> <span class="badge" style="background-color:blue; font-size: 24; ">
+                <?php 
+                if($nextquestion > $lastquestion )
+                {?>
+                 <h1> <span class="badge" style="background-color:blue; font-size: 24; ">
+                    Submit survey
+                  </span></h1>
+                  <h4>Thank you for answering all the questions, <br> We can get to you in case; </h4>
+
+                <?php                 
+    
+                }
+                else{
+                ?>
+                 <h1> <span class="badge" style="background-color:blue; font-size: 24; ">
                     <?php echo $nextquestion; ?>
                   </span></h1>
+                <?php } ?>
+               
 
                 <h2>
 
-                  <?php echo $question->question; ?>
+                  <?php echo @$question->question; ?>
 
 
                 </h2>
@@ -257,7 +270,7 @@ foreach ($results as $userinfo) {
                 <span class="text-danger" style="color:red;" id="error"></span>
                 <?php
                 // echo $option = $question->frm_option;               
-                if ($question->type == 'radio_opt') {
+                if (@$question->type == 'radio_opt') {
                   foreach (json_decode($options) as $k => $v){
                     ?>
                     <div class="form-group">
@@ -266,7 +279,7 @@ foreach ($results as $userinfo) {
                       <label for="option_<?php echo $k ?>"><?php echo $v ?></label>
                     </div>
                   <?php }; 
-                } elseif ($question->type == 'check_opt') {
+                } elseif (@$question->type == 'check_opt') {
                   foreach (json_decode($options) as $k => $v){
                   ?>
                   <div class="form-group">
@@ -276,7 +289,7 @@ foreach ($results as $userinfo) {
                              <?php
 
                 }}
-              elseif ($question->type == 'textfield_s') {
+              elseif (@$question->type == 'textfield_s') {
                 ?>
                 <textarea name="answer"  cols="30" rows="5" class="form-control" 
 								placeholder="Write Something here..."></textarea>
@@ -291,7 +304,8 @@ foreach ($results as $userinfo) {
                 </p>
                 <?php if ($nextquestion == $lastquestion + 1) {
                   ?>
-                  <a href="#" class="btn btn-primary" type="submit" id="continue">Submit survey</a>
+                  
+                  <a href="account.php" class="btn btn-primary" type="submit" id="continue">Submit survey</a>
 
                   <?php
                 } else {
@@ -481,13 +495,13 @@ foreach ($results as $userinfo) {
               </h4>
               <ul class="  ">
                 <li class=" active">
-                  <a class="" href="index.html">Survey <span class="sr-only">(current)</span></a>
+                  <a class="" href="index.php">Survey <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="">
-                  <a class="" href="about.html"> My Account</a>
+                  <a class="" href="account.php"> My Account</a>
                 </li>
                 <li class="">
-                  <a class="" href="service.html">Contact us</a>
+                  <a class="" href="#contactus">Contact us</a>
                 </li>
               </ul>
             </div>

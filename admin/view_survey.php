@@ -46,7 +46,8 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 				<form action="" id="manage-sort">
 				<div class="card-body ui-sortable">
 					<?php 
-					$question = $conn->query("SELECT * FROM questions where survey_id = 4 order by abs(order_by) asc,abs(id) asc");
+					$surveyid=$_GET['id'];
+					$question = $conn->query("SELECT * FROM questions where survey_id = $surveyid  order by abs(order_by) asc,abs(id) asc");
 					while($row=$question->fetch_assoc()):	
 					?>
 					<div class="callout callout-info">

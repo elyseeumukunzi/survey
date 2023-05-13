@@ -27,17 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 $tointerval = $today->diff($to);
                 $num_days = $allinterval->days;
                 $fromday1 = $frominterval->days;
-                echo "all days interval" . $num_days . "from day1  to today" . $fromday1;
+                $from=$fromday1 - 1;
+                // echo "all days interval" . $num_days . "from day1  to today" . $fromday1;
                 if ($num_days < $fromday1) {
                     $response['message'] = "Survey has ended";
                     $response['value'] = 0;
                 } 
-                elseif($fromday1 < $num_days)                
-                {
-                    $response['message'] = "Survey is not yet started";
-                    $response['value'] = 0;
+                // elseif($from < $num_days -1)                
+                // {
+                //     $response['message'] = "Survey is not yet started";
+                //     $response['value'] = 0;
                     
-                }
+                // }
                 else {
                     $response['message'] = "survey found ";
                     $response['value'] = 1;

@@ -2,7 +2,7 @@
 <?php
 if(isset($_GET['id'])){
 	$type_arr = array('',"Admin","Staff","Subscriber");
-	$qry = $conn->query("SELECT *,concat(lastname,', ',firstname,' ',middlename) as name FROM users where id = ".$_GET['id'])->fetch_array();
+	$qry = $conn->query("SELECT * FROM users where id = ".$_GET['id'])->fetch_array();
 foreach($qry as $k => $v){
 	$$k = $v;
 }
@@ -12,7 +12,7 @@ foreach($qry as $k => $v){
 	<table class="table">
 		<tr>
 			<th>Name:</th>
-			<td><b><?php echo ucwords($name) ?></b></td>
+			<td><b><?php echo ucwords($companyname) ?></b></td>
 		</tr>
 		<tr>
 			<th>Email:</th>
