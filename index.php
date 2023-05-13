@@ -516,7 +516,7 @@ foreach ($results as $userinfo) {
                   <img src="images/telephone-white.png" width="12px" alt="">
                 </div>
                 <p>
-                  +250 789817969
+                +250-252502437
                 </p>
               </a>
               <a href="">
@@ -524,7 +524,7 @@ foreach ($results as $userinfo) {
                   <img src="images/envelope-white.png" width="18px" alt="">
                 </div>
                 <p>
-                  eri-rwanda@gmail.com
+                info@eri-rwanda.com
                 </p>
               </a>
             </div>

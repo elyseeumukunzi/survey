@@ -270,7 +270,7 @@ foreach ($results as $userinfo) {
                   <img src="images/envelope-white.png" width="18px" alt="">
                 </div>
                 <p>
-                  eri-rwanda@gmail.com
+                  info@eri-rwanda.com
                 </p>
               </a>
             </div>

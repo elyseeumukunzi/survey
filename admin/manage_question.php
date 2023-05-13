@@ -62,7 +62,7 @@ if (isset($_GET['id'])) {
 										</thead>
 										<tbody>
 											<?php
-											$i = 0;
+											$i = 1;
 											foreach (json_decode($frm_option) as $k => $v):
 												$i++;
 												?>
